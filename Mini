@@ -1,0 +1,30 @@
+}
+ printf("----------------------------------------------------\n");
+ }
+ int findProductIndex(int productId) {
+ for (int i = 0; i < numProducts; i++) {
+ if (departmentalStore[i].id == productId) {
+ return i;
+ }
+ }
+ return -1; // Product not found
+ }
+ void updateProductQuantity() {
+ int productId, quantity;
+ printf("Enter the product ID to update quantity: ");
+ scanf("%d", &productId);
+ int productIndex = findProductIndex(productId);
+ if (productIndex == -1) {
+ printf("Product not found!\n");
+ } else {
+ printf("Enter the new quantity: ");
+ scanf("%d", &quantity);
+ departmentalStore[productIndex].quantity = quantity;
+ printf("Product quantity updated successfully!\n");
+ }
+ }
+ int main() {
+ int choice;
+ do {
+ printf("\nDepartmental Store Management System\n");
+ printf("1. Add a new product\n");
